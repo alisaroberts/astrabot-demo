@@ -242,9 +242,6 @@ body { font-family: Inter, system-ui, Arial, sans-serif; color: var(--text); }
 }
 
 /* ================= DEV CREDIT ASTEROID ================= */
-
-/* ================= DEV CREDIT ASTEROID ================= */
-
 .floating-credit {
   position: absolute;
   bottom: 15%;
@@ -255,42 +252,20 @@ body { font-family: Inter, system-ui, Arial, sans-serif; color: var(--text); }
   pointer-events: none;
 }
 
-/* firetrail (both layers) */
-.floating-credit .firetrail {
-  position: absolute;
-  top: 50%;         /* center vertically */
-  left: 50%;        /* center horizontally */
-  width: 600px;     /* large size */
-  height: auto;
-  opacity: 0.9;
-  transform: translate(-70%, -50%); /* shifts so asteroid sits at the front */
-}
-
-/* back trail stays behind */
-.floating-credit .firetrail.back {
-  z-index: 1;
-}
-
-/* asteroid rocks smoothly, stays in the middle */
 .floating-credit .asteroid {
   position: relative;
-  width: 220px;
+  width: 600px; /* size matches your single GIF */
   height: auto;
   z-index: 2;
-  animation: rockAsteroid 7s ease-in-out infinite; /* smooth rock */
-  transform-origin: 50% 55%; /* natural pivot */
+  animation: rockAsteroid 7s ease-in-out infinite; /* gentle sway */
+  transform-origin: 50% 55%;
 }
 
-/* front trail sits on top */
-.floating-credit .firetrail.front {
-  z-index: 3;
-}
-
-/* rocking only (smooth loop) */
+/* gentle rock motion */
 @keyframes rockAsteroid {
-  0%   { transform: rotate(-12deg); }
-  50%  { transform: rotate(12deg); }
-  100% { transform: rotate(-12deg); }
+  0%   { transform: rotate(-4deg); }
+  50%  { transform: rotate(4deg); }
+  100% { transform: rotate(-4deg); }
 }
 
 /* drift path left → right */
