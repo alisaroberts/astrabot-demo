@@ -47,20 +47,20 @@ export default function App() {
       </div>
 
       {/* floating developer credit asteroid */}
-<div className="floating-credit">
-  {/* firetrail stays steady */}
-  <img
-    src="/firetrail.gif"
-    alt="Asteroid Fire Trail"
-    className="firetrail"
-  />
-  {/* asteroid rocks back and forth */}
-  <img
-    src="/developercredit.png"
-    alt="Alisa Roberts Development 2025"
-    className="asteroid"
-  />
-</div>
+      <div className="floating-credit">
+        {/* firetrail stays steady */}
+        <img
+          src={process.env.PUBLIC_URL + "/firetrail.gif"}
+          alt="Asteroid Fire Trail"
+          className="firetrail"
+        />
+        {/* asteroid rocks back and forth */}
+        <img
+          src={process.env.PUBLIC_URL + "/developercredit.png"}
+          alt="Alisa Roberts Development 2025"
+          className="asteroid"
+        />
+      </div>
     </div>
   );
 }

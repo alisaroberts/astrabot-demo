@@ -16,7 +16,7 @@ export default function AstraBot() {
       title="Click me!"
     >
       <img
-        src="/astrabot.png"
+        src={process.env.PUBLIC_URL + "/astrabot.png"}
         alt="AstraBot"
         className="astrabot-img"
         draggable="false"
