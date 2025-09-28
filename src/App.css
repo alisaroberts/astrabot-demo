@@ -243,36 +243,47 @@ body { font-family: Inter, system-ui, Arial, sans-serif; color: var(--text); }
 
 /* ================= DEV CREDIT ASTEROID ================= */
 
+/* ================= DEV CREDIT ASTEROID ================= */
+
 .floating-credit {
   position: absolute;
   bottom: 15%;
-  left: -220px;                 /* starts off screen */
+  left: -220px; /* starts off screen */
   height: auto;
   animation: driftPath 45s linear infinite; /* drift left → right */
   z-index: 5;
   pointer-events: none;
 }
 
-/* firetrail behind asteroid, independent size, aligned */
+/* firetrail (both layers) */
 .floating-credit .firetrail {
   position: absolute;
-  top: 50%;             /* center vertically */
-  left: 50%;            /* center horizontally */
-  width: 600px;         /* large size */
+  top: 50%;         /* center vertically */
+  left: 50%;        /* center horizontally */
+  width: 600px;     /* large size */
   height: auto;
   opacity: 0.9;
-  z-index: 1;
-  transform: translate(-70%, -50%); /* shifts trail so asteroid sits at the front */
+  transform: translate(-70%, -50%); /* shifts so asteroid sits at the front */
 }
 
-/* asteroid rocks smoothly, size locked */
+/* back trail stays behind */
+.floating-credit .firetrail.back {
+  z-index: 1;
+}
+
+/* asteroid rocks smoothly, stays in the middle */
 .floating-credit .asteroid {
   position: relative;
-  width: 220px;    /* asteroid stays consistent */
+  width: 220px;
   height: auto;
   z-index: 2;
   animation: rockAsteroid 7s ease-in-out infinite; /* smooth rock */
   transform-origin: 50% 55%; /* natural pivot */
+}
+
+/* front trail sits on top */
+.floating-credit .firetrail.front {
+  z-index: 3;
 }
 
 /* rocking only (smooth loop) */

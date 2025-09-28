@@ -48,17 +48,25 @@ export default function App() {
 
       {/* floating developer credit asteroid */}
       <div className="floating-credit">
-        {/* firetrail stays steady */}
+        {/* back firetrail */}
         <img
           src={process.env.PUBLIC_URL + "/firetrail.gif"}
-          alt="Asteroid Fire Trail"
-          className="firetrail"
+          alt="Asteroid Fire Trail Back"
+          className="firetrail back"
         />
+
         {/* asteroid rocks back and forth */}
         <img
           src={process.env.PUBLIC_URL + "/developercredit.png"}
           alt="Alisa Roberts Development 2025"
           className="asteroid"
+        />
+
+        {/* top firetrail */}
+        <img
+          src={process.env.PUBLIC_URL + "/firetrail.toplayer.gif"}
+          alt="Asteroid Fire Trail Top"
+          className="firetrail front"
         />
       </div>
     </div>
