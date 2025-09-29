@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/astrabot-demo/static/css/main.804541b3.css",
-    "main.js": "/astrabot-demo/static/js/main.da9cd013.js",
+    "main.css": "/astrabot-demo/static/css/main.f7f96407.css",
+    "main.js": "/astrabot-demo/static/js/main.5a06e4e5.js",
     "static/js/453.bfeadc8a.chunk.js": "/astrabot-demo/static/js/453.bfeadc8a.chunk.js",
     "index.html": "/astrabot-demo/index.html",
-    "main.804541b3.css.map": "/astrabot-demo/static/css/main.804541b3.css.map",
-    "main.da9cd013.js.map": "/astrabot-demo/static/js/main.da9cd013.js.map",
+    "main.f7f96407.css.map": "/astrabot-demo/static/css/main.f7f96407.css.map",
+    "main.5a06e4e5.js.map": "/astrabot-demo/static/js/main.5a06e4e5.js.map",
     "453.bfeadc8a.chunk.js.map": "/astrabot-demo/static/js/453.bfeadc8a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.804541b3.css",
-    "static/js/main.da9cd013.js"
+    "static/css/main.f7f96407.css",
+    "static/js/main.5a06e4e5.js"
   ]
 }
