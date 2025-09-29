@@ -140,10 +140,10 @@ body { font-family: Inter, system-ui, Arial, sans-serif; color: var(--text); }
   box-shadow: 0 20px 60px rgba(0,0,0,0.45), inset 0 0 0 1px rgba(255,255,255,0.06);
 }
 .glass {
-  background: rgba(255,255,255,0.14);
+  background: rgba(255, 255, 255, 0.14); /* light neutral glass */
   backdrop-filter: blur(16px) saturate(120%);
   -webkit-backdrop-filter: blur(16px) saturate(120%);
-  border: 1px solid rgba(255,255,255,0.18);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 /* header */
@@ -182,35 +182,60 @@ body { font-family: Inter, system-ui, Arial, sans-serif; color: var(--text); }
   align-content: start;
   gap: 14px;
 }
+
+/* bot message bubble */
 .bot-message {
   display: block;
   max-width: 90%;
   margin: 0 auto;
   padding: 12px 14px;
   border-radius: 14px 14px 14px 6px;
-  border: 1px solid rgba(255,255,255,0.28);
-  background: rgba(0,0,0,0.22);
-  color: #0b1024;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(255, 255, 255, 0.14); /* fallback so Safari doesn’t turn it pure white */
+  backdrop-filter: blur(16px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  color: var(--text); /* white in cosmic */
   font-weight: 600;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.25);
 }
+
+/* override only in day mode */
+.day-bg .bot-message {
+  color: #0b1024; /* navy text */
+  background: rgba(255, 255, 255, 0.65); /* soft glass white */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 
 /* ================= TOGGLE BUTTON ================= */
 .toggle-btn {
   padding: 10px 18px;
   border-radius: 14px;
   border: 1px solid rgba(255,255,255,0.25);
-  background: rgba(255,255,255,0.18);
-  backdrop-filter: blur(14px) saturate(120%);
+  background: rgba(255,255,255,0.2); /* fallback glass *//* was 0.18, this brightens it */
+  backdrop-filter: blur(12px) saturate(180%); /*was 14 and 120% this should fix safari*/
   -webkit-backdrop-filter: blur(14px) saturate(120%);
   font-weight: 700;
   font-size: 15px;
   cursor: pointer;
   transition: all .25s ease-in-out;
 }
-.toggle-btn:hover { background: rgba(255,255,255,0.25); transform: scale(1.05); }
-.toggle-btn.on  { color:#00ff9d; box-shadow: 0 0 12px rgba(0,255,157,0.6), 0 0 24px rgba(0,255,157,0.4); }
-.toggle-btn.off { color:#ff5b5b; box-shadow: 0 0 12px rgba(255,91,91,0.6), 0 0 24px rgba(255,91,91,0.4); }
+
+/* hover effect */
+.toggle-btn:hover { 
+  background: rgba(255,255,255,0.25); 
+  transform: scale(1.05); 
+}
+
+/* ON / OFF states */
+.toggle-btn.on  { 
+  color:#00ff9d; 
+  box-shadow: 0 0 12px rgba(0,255,157,0.6), 0 0 24px rgba(0,255,157,0.4); 
+}
+.toggle-btn.off { 
+  color:#ff5b5b; 
+  box-shadow: 0 0 12px rgba(255,91,91,0.6), 0 0 24px rgba(255,91,91,0.4); 
+}
 
 /* ================= ASTRABOT ================= */
 .astrabot {
@@ -247,7 +272,7 @@ body { font-family: Inter, system-ui, Arial, sans-serif; color: var(--text); }
   bottom: 15%;
   left: -220px; /* starts off screen */
   height: auto;
-  animation: driftPath 45s linear infinite; /* drift left → right */
+  animation: driftPath 30s linear infinite; /* drift left → right */
   z-index: 5;
   pointer-events: none;
 }
@@ -274,14 +299,16 @@ body { font-family: Inter, system-ui, Arial, sans-serif; color: var(--text); }
   25%  { transform: translateX(25vw) translateY(-5vh); }
   50%  { transform: translateX(50vw) translateY(6vh); }
   75%  { transform: translateX(75vw) translateY(-4vh); }
-  100% { transform: translateX(100vw) translateY(0); }
+  100% { transform: translateX(105vw) translateY(0); }
 }
 
 /* darker bot text only in day mode */
 .day-bg .bot-message {
   color: #0b1024;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.35); /* softer glass */
   border: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(12px) saturate(180%); /* Safari fix */
+  backdrop-filter: blur(12px) saturate(180%);
 }
 
 /* Fix asteroid placement on smaller devices */
@@ -292,3 +319,7 @@ body { font-family: Inter, system-ui, Arial, sans-serif; color: var(--text); }
   }
 }
 
+/* fallback fix only for cosmic background on Safari */
+.cosmic-bg .glass {
+  background: rgba(20, 20, 40, 0.3);
+}
