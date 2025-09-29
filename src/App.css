@@ -274,7 +274,7 @@ body { font-family: Inter, system-ui, Arial, sans-serif; color: var(--text); }
   25%  { transform: translateX(25vw) translateY(-5vh); }
   50%  { transform: translateX(50vw) translateY(6vh); }
   75%  { transform: translateX(75vw) translateY(-4vh); }
-  100% { transform: translateX(99vw) translateY(0); }
+  100% { transform: translateX(100vw) translateY(0); }
 }
 
 /* darker bot text only in day mode */
