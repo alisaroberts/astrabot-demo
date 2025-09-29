@@ -40,8 +40,9 @@ export default function App() {
 
         <div className="chat-body">
           <AstraBot />
-          <div className="bot-message glass">
-            🌌 Have you tried turning the universe off and on again?
+          <div className="bot-message glass" style={{ textAlign: "center" }}>
+            🌌 Have you tried turning the universe off and on again? <br />
+            Thanks for visiting my demo!
           </div>
         </div>
       </div>
