@@ -270,10 +270,10 @@ body { font-family: Inter, system-ui, Arial, sans-serif; color: var(--text); }
 
 /* drift path left → right */
 @keyframes driftPath {
-  0%   { transform: translateX(0) translateY(0); }
+  0%   { transform: translateX(-20) translateY(0); }
   25%  { transform: translateX(25vw) translateY(-5vh); }
   50%  { transform: translateX(50vw) translateY(6vh); }
-  75%  { transform: translateX(75vw) translateY(-4vh); }
+  75%  { transform: translateX(90vw) translateY(-4vh); }
   100% { transform: translateX(105vw) translateY(0); }
 }
 
