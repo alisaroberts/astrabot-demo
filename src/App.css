@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap");
+
 
 :root {
   --navy: #0b1024;
@@ -13,7 +14,7 @@
 
 * { box-sizing: border-box; }
 html, body, #root { height: 100%; margin: 0; }
-body { font-family: Inter, system-ui, Arial, sans-serif; color: var(--text); }
+body { font-family: 'Poppins', system-ui, Arial, sans-serif; color: var(--text); }
 
 /* ================= NIGHT MODE ================= */
 .cosmic-bg {
@@ -206,14 +207,13 @@ body { font-family: Inter, system-ui, Arial, sans-serif; color: var(--text); }
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-
 /* ================= TOGGLE BUTTON ================= */
 .toggle-btn {
   padding: 10px 18px;
   border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.25);
-  background: rgba(20,20,20,0.25); /* fallback glass *//* was 0.18, this brightens it */
-  backdrop-filter: blur(12px) saturate(160%) contrast(120%); /*was 14 and 120% this should fix safari*/
+  border: 1px solid rgba(255,255,255,0.18);
+  background: transparent; 
+  backdrop-filter: blur(12px) saturate(160%) contrast(120%);
   -webkit-backdrop-filter: blur(12px) saturate(160%) contrast(120%);
   font-weight: 700;
   font-size: 15px;
@@ -221,21 +221,22 @@ body { font-family: Inter, system-ui, Arial, sans-serif; color: var(--text); }
   transition: all .25s ease-in-out;
 }
 
-/* hover effect */
 .toggle-btn:hover { 
-  background: rgba(255,255,255,0.25); 
   transform: scale(1.05); 
 }
 
-/* ON / OFF states */
-.toggle-btn.on  { 
+.toggle-btn.on { 
+  background: rgba(0, 255, 0, 0.25);  /* translucent green */
   color:#00ff9d; 
   box-shadow: 0 0 12px rgba(0,255,157,0.6), 0 0 24px rgba(0,255,157,0.4); 
 }
+
 .toggle-btn.off { 
-  color:#ff5b5b; 
-  box-shadow: 0 0 12px rgba(255,91,91,0.6), 0 0 24px rgba(255,91,91,0.4); 
+  background: hsla(308, 91%, 44%, 0.37);  /* translucent pink*/
+  color:#b81a7b; 
+  box-shadow: 0 0 12px rgba(255, 91, 219, 0.6), 0 0 24px rgba(250, 85, 228, 0.4); 
 }
+
 
 /* ================= ASTRABOT ================= */
 .astrabot {
@@ -260,10 +261,10 @@ body { font-family: Inter, system-ui, Arial, sans-serif; color: var(--text); }
 }
 .jump { animation: bubbleJump 1.5s ease-in-out; }
 @keyframes bubbleJump {
-  0% { transform: translateY(0); }
-  30% { transform: translateY(-100px) scale(1.05); }
-  60% { transform: translateY(-40px)  scale(0.98); }
-  100%{ transform: translateY(0); }
+  0%   { transform: translateY(0); }
+  30%  { transform: translateY(-100px) scale(1.05); }
+  70%  { transform: translateY(0); }
+  100% { transform: translateY(0); }
 }
 
 /* ================= DEV CREDIT ASTEROID ================= */
@@ -272,7 +273,7 @@ body { font-family: Inter, system-ui, Arial, sans-serif; color: var(--text); }
   bottom: 15%;
   left: -220px; /* starts off screen */
   height: auto;
-  animation: driftPath 30s linear infinite; /* drift left → right & speed */ 
+  animation: driftPath 20s linear infinite; /* drift left → right & speed */ 
   z-index: 5;
   pointer-events: none;
 }
@@ -323,3 +324,53 @@ body { font-family: Inter, system-ui, Arial, sans-serif; color: var(--text); }
 .cosmic-bg .glass {
   background: rgba(20, 20, 40, 0.3);
 }
+/* Cosmic: deeper glass */
+.cosmic-bg .toggle-btn{
+  background: rgba(20,20,40,0.35);
+  border-color: rgba(255,255,255,0.18);
+}
+
+/* Ensure ON/OFF colors always win */
+.toggle-btn.on { 
+  background: rgba(0, 255, 0, 0.25) !important;  
+  color:#00ff9d; 
+  box-shadow: 0 0 12px rgba(0,255,157,0.6), 0 0 24px rgba(0,255,157,0.4); 
+}
+
+.toggle-btn.off { 
+  background: rgba(255, 0, 0, 0.25) !important;  
+  color:#ff5b5b; 
+  box-shadow: 0 0 12px rgba(255,91,91,0.6), 0 0 24px rgba(255,91,91,0.4); 
+}
+
+.demo-top {
+  text-align: center;
+  font-weight: 700;   /* bold */
+  margin-bottom: 8px;
+}
+
+.demo-intro {
+  text-align: center;
+  font-weight: 400;   /* not bold */
+  margin-bottom: 6px;
+}
+
+.demo-showcase {
+  text-align: left;
+  font-weight: 400;   /* not bold */
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0 auto 10px auto;
+  max-width: 90%;
+}
+
+.demo-outro {
+  text-align: center;
+  font-weight: 700;   /* bold */
+  margin-top: 8px;
+}
+
+.demo-top { text-align:center; font-weight:700; margin-bottom:8px; }
+.demo-intro { text-align:center; font-weight:400; margin-bottom:6px; }
+.demo-showcase { text-align:left; font-weight:400; font-size:14px; line-height:1.4; margin:0 auto 10px; max-width:90%; }
+.demo-outro { text-align:center; font-weight:700; margin-top:8px; }
